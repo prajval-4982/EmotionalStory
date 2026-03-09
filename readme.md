@@ -25,21 +25,21 @@ A local AI-powered application that weaves creative, emotion-driven stories base
 Gen-ai/
 ├── backend/
 │   ├── models/
-│   │   └── Llama-3.2-3B-Instruct.Q4_K_M.gguf  <-- Your AI Model
+│   │   └── Llama-3.2-3B-Instruct.Q4_K_M.gguf  <-- Your AI Model (download separately)
 │   ├── app.py                 # FastAPI Server (Main Entry Point)
-│   ├── story_generator.py     # AI Logic & Streaming Generator
-│   ├── dataset_utils.py       # (Optional) Emotion Helper
-│   └── .env                   # Environment Variables
+│   ├── story_generator.py     # AI Inference & Streaming
+│   ├── prompt_builder.py      # System & User Prompt Construction
+│   ├── dataset_utils.py       # Emotion Style Blending Logic
+│   └── requirements.txt       # Python Dependencies
 │
 ├── frontend/
 │   ├── index.html             # User Interface
-│   ├── static/
-│   │   ├── style.css          # Styling
-│   │   └── script.js          # Frontend Logic
-│   └── generated_image.png    # (Placeholder for outputs)
+│   ├── style.css              # Styling
+│   ├── script.js              # Frontend Logic
+│   └── pen-icon.png           # Favicon
 │
-├── README.md
-└── requirements.txt
+├── .gitignore
+└── readme.md
 
 ```
 
@@ -55,8 +55,8 @@ Gen-ai/
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/emotional-story-generator.git
-cd emotional-story-generator
+git clone https://github.com/prajval-4982/EmotionalStory.git
+cd EmotionalStory
 
 ```
 
@@ -83,7 +83,7 @@ source .venv/bin/activate
 ### 4. Install Dependencies
 
 ```bash
-pip install fastapi uvicorn python-dotenv llama-cpp-python pydantic
+pip install -r backend/requirements.txt
 
 ```
 
@@ -102,9 +102,9 @@ You need the **Llama 3.2** GGUF model file.
 ## 🏃‍♂️ How to Run
 
 1. **Start the Backend Server:**
-Open your terminal in the `backend` folder and run:
+From the project root, run:
 ```bash
-python app.py
+python backend/app.py
 
 ```
 
