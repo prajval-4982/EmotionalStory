@@ -1,0 +1,37 @@
+# --- Python Basics ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environments ---
+# Ignores the folder where you installed your libraries
+.venv/
+venv/
+env/
+
+# --- Environment Variables (Secrets) ---
+# CRITICAL: Never push API keys to GitHub
+.env
+.env.local
+backend/.env
+
+# --- Large AI Models ---
+# Git has a file size limit (100MB). Your model is 2GB+.
+# You must ignore these and download them manually on new machines.
+*.gguf
+backend/models/*.gguf
+*.bin
+*.pth
+
+# --- IDE & OS Files ---
+# Settings files that are specific to your computer
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Optional: Generated Outputs ---
+# If you don't want to track the generated story images
+frontend/generated_image.png
+*.txt
+!backend/requirements.txt
